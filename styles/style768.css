@@ -1,0 +1,87 @@
+
+@media (width >= 768px) {
+  .header {        
+    margin-block-end: 40px;   
+    padding: var(--padding-gap);
+  }
+
+  .header__theme-menu::before {
+    inset-block-start: 20px;
+    inset-inline-end: 48px;
+  }
+
+  .header__theme-menu::after {
+    inset-block-start: 28px;
+    inset-inline-end: 28px;
+  }
+
+  .header__title {
+    position: relative;
+    justify-self: start;
+    inset-inline-end: 20px; 
+  }
+
+  .header__text {
+    max-width: 364px;
+  }
+
+  .decorated-zone {
+    min-block-size: 1024px;
+    min-inline-size: 768px;
+  }
+ 
+  .content {
+    padding: var(--padding-gap);
+  }
+
+  .content-section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content-section__title {
+    max-width: 236px;
+  }
+
+  main .how {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery-section__title {
+    margin-block-end: 20px; 
+  }
+
+  .gallery-section__list {
+    grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street"
+    ;
+    gap: 20px;
+  }
+
+  .list__element:nth-child(1) {
+    grid-area: sunset;
+  }
+
+  .list__element:nth-child(2) {
+    grid-area: ice-cream;
+    grid-row: span 2;
+  }
+
+  .list__element:nth-child(3) {
+    grid-area: tape;    
+  }
+
+  .list__element:nth-child(4) {
+    grid-area: books;    
+  }
+
+  .list__element:nth-child(5) {
+    grid-area: street;    
+  }
+
+  .footer {
+    margin-block-start: 40px;
+  }
+}

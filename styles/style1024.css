@@ -1,0 +1,37 @@
+@media (width >= 1024px) {
+  .header {
+    justify-items: center;
+    align-items: start;
+  }
+
+  .decorated-zone {
+    min-block-size: 768px;
+    min-inline-size: 1024px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__text {
+    max-width: 491px;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .content-section__title {
+    max-width: 314.96px;
+  }
+
+  .how {
+    .content-section__blocks{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);      
+    }
+  }
+
+  .footer {
+    margin-block-start: 40px;
+  }
+}
