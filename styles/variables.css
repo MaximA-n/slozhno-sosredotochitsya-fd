@@ -1,10 +1,6 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
 :root {
   --padding-gap: 10px;
-  --main-font-family: 'IBM Plex mono', 'Times New Roman';  
+  --main-font-family: 'IBM Plex mono', monospace;  
   --main-text-size: 18px;
   --main-bg-color: #000028;
   --main-text-color: #F1B2CE;  
@@ -19,7 +15,7 @@
   --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --nav-color: #FF0070;
   --bg-image: url("../images/cover-image-dark.png");
-  --button-hover: #32312D66;
+  --button-hover: #FF007066;
 }
 
 @media (width >= 768px) {

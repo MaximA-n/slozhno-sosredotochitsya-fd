@@ -1,18 +1,19 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--bg-image);
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  background-color: var(--main-bg-color);
 }
-
 
 .decorated-zone {
   position: relative;
+}
+
+.header, .footer {
   min-block-size: 668px;
-  min-inline-size: 375px;
+  block-size: 100vh;
 }
 
 .decorated-zone::before {
@@ -49,29 +50,29 @@
   margin-block-end: 30px;
 }
 
-.header__theme-menu::before {
-  content: "REC";
+.header__rec {
   position: absolute;
-  inset-block-start: 10px;
   inset-inline-end: 38px;
+  inset-block-start: var(--main-gap);
   font-family: var(--main-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: var(--main-text-size);
-  line-height: 25px;
+  line-height: 1.3;
   color: var(--nav-color);
+  text-transform: uppercase;
 }
 
-.header__theme-menu::after {
-  content: "";
+.header__rec::after {
+  content: ""; 
   position: absolute;
-  inset-block-start: 18px;
-  inset-inline-end: 18px;
-  width: 9px;
-  height: 9px;  
+  inset-inline-end: -19px;
+  inset-block-start: 8px;
+  inline-size: 9px;
+  block-size: 9px;
   border-radius: 50%;
-  background: var(--nav-color);
-  box-shadow: 0px 0px 4px 2px var(--nav-color);
+  background-color: var(--nav-color);
+  box-shadow: 0px 0px 4px 2px var(--nav-color);  
 }
 
 .header__theme-menu-list {
@@ -81,35 +82,30 @@
 }
 
 .header__theme-menu-button {
-  border: none;
-  padding: 0px 14px;
+  border: 1px solid transparent;
+  padding: 0px 13px;
   color: var(--nav-color);
   background-color: transparent;
-  font-family: 'IBM Plex Mono';
+  font-family: var(--main-font-family);
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: var(--main-text-size);
+  line-height: 100%;
   text-align: center;
   text-transform: lowercase;
+  cursor: pointer
 }
 
 .header__theme-menu-button:focus {
   outline: none;
-}
+} 
 
 .header__theme-menu-button:focus-visible {
-  border-top: 0px solid var(--nav-color);
   border-bottom: 1px solid var(--nav-color);
-  border-right: 0px solid var(--nav-color);
-  border-left: 0px solid var(--nav-color);
 }
 
 .header__theme-menu-button:hover {
-  border-top: 1px solid var(--button-hover);
-  border-bottom: 1px solid var(--button-hover);
-  border-right: 1px solid var(--button-hover);
-  border-left: 1px solid var(--button-hover);
+  border: 1px solid var(--button-hover);
 }
 
 .logo {
@@ -123,14 +119,13 @@
 }
 
 .header__text {
-  max-width: 355px;
+  max-inline-size: 355px;
   font-family: var(--main-font-family);
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
+  font-size: var(--main-text-size);
+  line-height: 1.3;
   color: var(--main-heading-color);
-  background-color: var(--accent-color);
 }
 
 .content {
@@ -160,20 +155,19 @@
   font-family: var(--main-font-family);
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
+  font-size: var(--main-text-size);
+  line-height: 1.3;
 }
 
 .block__title, .block__text {
   font-family: var(--main-font-family);
   font-style: normal;  
-  font-size: 18px;
-  line-height: 23.4px;
+  font-size: var(--main-text-size);
+  line-height: 1.3;
 }
 
 .block__title {
   color: var(--main-heading-color);
-  background-color: var(--accent-color);  
   font-weight: 700;
 }
 
@@ -183,7 +177,7 @@
 }
 
 .anchor:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--main-text-color) ;
 }
 
 .anchor:focus {
@@ -201,23 +195,21 @@
 
 .block__subtitle {
   color: var(--main-heading-color);
-  background-color: var(--accent-color);
-  font-family: 'IBM Plex Mono';
+  font-family: var(--main-font-family);
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: var(--main-text-size);
+  line-height: 1.3;
 }
 
 .gallery-section__title {
   margin-block-end: 10px;
   color: var(--main-heading-color);
-  background-color: var(--accent-color);
   font-weight: 700;
   font-family: var(--main-font-family);
   font-style: normal;
-  font-size: 18px;
-  line-height: 23.4px;  
+  font-size: var(--main-text-size);
+  line-height: 1.3;  
 }
 
 .gallery-section__list {
@@ -237,4 +229,125 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+}
+
+
+@media (width >= 768px) {
+  .header {        
+    margin-block-end: 40px;   
+    padding: var(--padding-gap);
+  }
+
+  .header__rec {
+    inset-block-start: calc(var(--main-gap) + 10px) ;
+    inset-inline-end: 48px;
+  }
+
+  .header__title {
+    position: relative;
+    justify-self: start;
+    inset-inline-end: 20px; 
+  }
+
+  .header__text {
+    max-inline-size: 364px;
+  }
+
+  .header, .footer {
+    min-block-size: 1024px;
+    block-size: 100vh;
+  }
+ 
+  .content {
+    padding: var(--padding-gap);
+  }
+
+  .content-section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content-section__title {
+    max-inline-size: 236px;
+  }
+
+  main .how {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery-section__title {
+    margin-block-end: 20px; 
+  }
+
+  .gallery-section__list {
+    grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street"
+    ;
+    gap: 20px;
+  }
+
+  .list__element:nth-child(1) {
+    grid-area: sunset;
+  }
+
+  .list__element:nth-child(2) {
+    grid-area: ice-cream;
+    grid-row: span 2;
+  }
+
+  .list__element:nth-child(3) {
+    grid-area: tape;    
+  }
+
+  .list__element:nth-child(4) {
+    grid-area: books;    
+  }
+
+  .list__element:nth-child(5) {
+    grid-area: street;    
+  }
+
+  .footer {
+    margin-block-start: 40px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    justify-items: center;
+    align-items: start;
+  }
+
+  .header, .footer {
+    min-block-size: 768px;
+    block-size: 100vh;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__text {
+    max-inline-size: 491px;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .content-section__title {
+    max-inline-size: 314.96px;
+  }
+
+  .how {
+    .content-section__blocks{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);      
+    }
+  }
 }
