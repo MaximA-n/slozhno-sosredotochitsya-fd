@@ -96,6 +96,10 @@
   cursor: pointer
 }
 
+.header__theme-menu-button_active {
+  border: 1px solid var(--nav-color);
+} 
+
 .header__theme-menu-button:focus {
   outline: none;
 } 
@@ -259,7 +263,6 @@
 
   .header, .footer {
     min-block-size: 1024px;
-    block-size: 100vh;
   }
  
   .content {
@@ -326,7 +329,6 @@
 
   .header, .footer {
     min-block-size: 768px;
-    block-size: 100vh;
   }
 
   .header__theme-menu-list {
